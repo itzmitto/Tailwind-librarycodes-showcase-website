@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tailwind Recipe Lab — reusable Tailwind CSS recipes for frontend projects.">
+    <meta name="description" content="Tailwind Recipe Lab — reusable Tailwind CSS recipes for frontend development.">
     <title>Tailwind Recipe Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,304 +31,127 @@
 
                     <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
                         Reusable Tailwind CSS recipes for real frontend projects.
-                        Click a recipe, inspect the code and reuse it anywhere.
+                        Search, preview and copy exactly what you need.
                     </p>
                 </div>
 
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5">
+                <div class="min-w-[160px] rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5">
                     <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                        Recipe Library
+                        Visible Recipes
                     </div>
 
-                    <div class="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-slate-950">
-                        12
+                    <div id="recipe-count" class="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-slate-950">
+                        0
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-14">
-            <div class="mb-8 flex items-end justify-between">
-                <div>
-                    <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.15em] text-cyan-500">
-                        01 / Buttons
-                    </div>
+        <section class="border-b border-slate-200 py-8">
+            <div class="flex flex-col gap-5">
 
-                    <h2 class="mt-2 text-3xl font-extrabold tracking-[-0.04em]">
-                        Buttons
-                    </h2>
-                </div>
-
-                <p class="text-sm text-slate-400">
-                    Reusable button styles
-                </p>
-            </div>
-
-            <div class="grid grid-cols-4 gap-5">
-
-                <article
-                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl hover:shadow-slate-200/60">
-                    <div class="flex h-52 items-center justify-center bg-slate-50">
-                        <button
-                            class="rounded-xl bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 active:scale-95">
-                            Get Started
-                        </button>
-                    </div>
-
-                    <div class="border-t border-slate-200 p-5">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold">
-                                Primary Cyan
-                            </h3>
-
-                            <span class="font-['DM_Mono'] text-[9px] uppercase tracking-wider text-cyan-500">
-                                Button
-                            </span>
-                        </div>
-
-                        <p class="mt-2 text-sm text-slate-500">
-                            Bright primary action button.
-                        </p>
-                    </div>
-                </article>
-
-                <article
-                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-slate-200/60">
-                    <div class="flex h-52 items-center justify-center bg-slate-50">
-                        <button
-                            class="rounded-xl bg-emerald-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-300 active:scale-95">
-                            Continue
-                        </button>
-                    </div>
-
-                    <div class="border-t border-slate-200 p-5">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold">
-                                Secondary Emerald
-                            </h3>
-
-                            <span class="font-['DM_Mono'] text-[9px] uppercase tracking-wider text-emerald-500">
-                                Button
-                            </span>
-                        </div>
-
-                        <p class="mt-2 text-sm text-slate-500">
-                            Secondary action with emerald accent.
-                        </p>
-                    </div>
-                </article>
-
-                <article
-                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-200/60">
-                    <div class="flex h-52 items-center justify-center bg-slate-50">
-                        <button
-                            class="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-600 active:scale-95">
-                            Learn More
-                        </button>
-                    </div>
-
-                    <div class="border-t border-slate-200 p-5">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold">
-                                Clean Outline
-                            </h3>
-
-                            <span class="font-['DM_Mono'] text-[9px] uppercase tracking-wider text-slate-400">
-                                Button
-                            </span>
-                        </div>
-
-                        <p class="mt-2 text-sm text-slate-500">
-                            Neutral outline action.
-                        </p>
-                    </div>
-                </article>
-
-                <article
-                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-200/60">
-                    <div class="flex h-52 items-center justify-center bg-slate-50">
-                        <button
-                            class="rounded-xl px-6 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-200 hover:text-slate-950 active:scale-95">
-                            Cancel
-                        </button>
-                    </div>
-
-                    <div class="border-t border-slate-200 p-5">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-bold">
-                                Ghost
-                            </h3>
-
-                            <span class="font-['DM_Mono'] text-[9px] uppercase tracking-wider text-slate-400">
-                                Button
-                            </span>
-                        </div>
-
-                        <p class="mt-2 text-sm text-slate-500">
-                            Minimal low-priority action.
-                        </p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="border-t border-slate-200 py-14">
-            <div class="mb-8">
-                <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.15em] text-emerald-500">
-                    02 / Cards
-                </div>
-
-                <h2 class="mt-2 text-3xl font-extrabold tracking-[-0.04em]">
-                    Cards
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-4 gap-5">
-
-                <article
-                    class="rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60">
+                <div class="relative">
                     <div
-                        class="mb-10 flex size-12 items-center justify-center rounded-xl bg-cyan-100 text-xl font-extrabold text-cyan-700">
-                        01
+                        class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 font-['DM_Mono'] text-sm text-slate-400">
+                        /
                     </div>
 
-                    <h3 class="text-xl font-extrabold tracking-tight">
-                        Soft Cyan Card
-                    </h3>
+                    <input id="recipe-search" type="search" placeholder="Search buttons, gradients, glass, loaders..."
+                        autocomplete="off"
+                        class="w-full rounded-2xl border border-slate-200 bg-slate-50 py-4 pl-12 pr-5 text-sm font-medium text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100">
+                </div>
 
-                    <p class="mt-3 text-sm leading-6 text-slate-500">
-                        Clean content card with a subtle cyan highlight.
-                    </p>
-                </article>
-
-                <article
-                    class="rounded-2xl border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/50 transition hover:-translate-y-1">
-                    <div
-                        class="mb-10 flex size-12 items-center justify-center rounded-xl bg-emerald-100 text-xl font-extrabold text-emerald-700">
-                        02
-                    </div>
-
-                    <h3 class="text-xl font-extrabold tracking-tight">
-                        Elevated Card
-                    </h3>
-
-                    <p class="mt-3 text-sm leading-6 text-slate-500">
-                        Elevated surface using a soft layered shadow.
-                    </p>
-                </article>
-
-                <article
-                    class="rounded-2xl bg-gradient-to-br from-cyan-400 to-emerald-400 p-[1px] transition hover:-translate-y-1">
-                    <div class="h-full rounded-[15px] bg-white p-7">
-                        <div class="mb-10 font-['DM_Mono'] text-xs font-medium text-cyan-600">
-                            GRADIENT
-                        </div>
-
-                        <h3 class="text-xl font-extrabold tracking-tight">
-                            Gradient Border
-                        </h3>
-
-                        <p class="mt-3 text-sm leading-6 text-slate-500">
-                            Gradient border without a heavy visual effect.
-                        </p>
-                    </div>
-                </article>
-
-                <article
-                    class="relative overflow-hidden rounded-2xl border border-white/60 bg-gradient-to-br from-cyan-50 to-emerald-50 p-7 shadow-lg shadow-slate-200/40 transition hover:-translate-y-1">
-                    <div class="absolute -right-10 -top-10 size-28 rounded-full bg-cyan-300/40 blur-3xl"></div>
-
-                    <div class="relative">
-                        <div class="mb-10 font-['DM_Mono'] text-xs font-medium text-emerald-600">
-                            GLASS
-                        </div>
-
-                        <h3 class="text-xl font-extrabold tracking-tight">
-                            Soft Glass
-                        </h3>
-
-                        <p class="mt-3 text-sm leading-6 text-slate-500">
-                            Lightweight glass-inspired surface.
-                        </p>
-                    </div>
-                </article>
+                <div id="category-filters" class="flex flex-wrap gap-2"></div>
 
             </div>
         </section>
 
-        <section class="border-t border-slate-200 py-14">
-            <div class="mb-8">
-                <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.15em] text-cyan-500">
-                    03 / Form Elements
-                </div>
+        <div id="recipe-sections"></div>
 
-                <h2 class="mt-2 text-3xl font-extrabold tracking-[-0.04em]">
-                    Inputs & Badges
-                </h2>
+        <section id="empty-state" class="hidden py-28 text-center">
+            <div
+                class="mx-auto flex size-14 items-center justify-center rounded-2xl bg-slate-100 font-['DM_Mono'] text-lg text-slate-500">
+                ?
             </div>
 
-            <div class="grid grid-cols-2 gap-5">
+            <h2 class="mt-6 text-2xl font-extrabold tracking-[-0.035em] text-slate-950">
+                No recipes found
+            </h2>
 
-                <article class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-                    <div class="mb-6">
-                        <div class="font-['DM_Mono'] text-[9px] uppercase tracking-wider text-slate-400">
-                            Input Recipe
-                        </div>
-
-                        <h3 class="mt-2 font-bold">
-                            Clean Input
-                        </h3>
-                    </div>
-
-                    <label class="block">
-                        <span class="mb-2 block text-sm font-semibold text-slate-700">
-                            Email address
-                        </span>
-
-                        <input type="email" placeholder="developer@example.com"
-                            class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-100">
-                    </label>
-                </article>
-
-                <article class="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-                    <div class="mb-8">
-                        <div class="font-['DM_Mono'] text-[9px] uppercase tracking-wider text-slate-400">
-                            Badge Recipes
-                        </div>
-
-                        <h3 class="mt-2 font-bold">
-                            Status Badges
-                        </h3>
-                    </div>
-
-                    <div class="flex flex-wrap gap-3">
-                        <span class="rounded-full bg-cyan-100 px-3 py-1.5 text-xs font-bold text-cyan-700">
-                            New
-                        </span>
-
-                        <span class="rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-bold text-emerald-700">
-                            Active
-                        </span>
-
-                        <span class="rounded-full bg-amber-100 px-3 py-1.5 text-xs font-bold text-amber-700">
-                            Pending
-                        </span>
-
-                        <span class="rounded-full bg-rose-100 px-3 py-1.5 text-xs font-bold text-rose-700">
-                            Error
-                        </span>
-
-                        <span class="rounded-full bg-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700">
-                            Draft
-                        </span>
-                    </div>
-                </article>
-
-            </div>
+            <p class="mt-2 text-sm text-slate-500">
+                Try another search term or category.
+            </p>
         </section>
 
     </main>
+
+    <div id="recipe-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-8">
+        <div id="recipe-modal-backdrop" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
+
+        <div
+            class="relative z-10 max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-950/20">
+            <div
+                class="sticky top-0 z-20 flex items-start justify-between gap-8 border-b border-slate-200 bg-white px-8 py-7">
+                <div>
+                    <div id="modal-category"
+                        class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.15em] text-cyan-500"></div>
+
+                    <h2 id="modal-title" class="mt-2 text-3xl font-extrabold tracking-[-0.045em] text-slate-950"></h2>
+
+                    <p id="modal-description" class="mt-3 max-w-2xl text-sm leading-6 text-slate-500"></p>
+                </div>
+
+                <button id="modal-close" type="button"
+                    class="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-xl text-slate-500 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
+                    aria-label="Close">
+                    ×
+                </button>
+            </div>
+
+            <div class="grid gap-6 p-8">
+
+                <section>
+                    <div class="mb-3 flex items-center justify-between">
+                        <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                            Live Preview
+                        </div>
+
+                        <div
+                            class="rounded-full bg-emerald-50 px-3 py-1 font-['DM_Mono'] text-[9px] font-medium uppercase tracking-[0.1em] text-emerald-600">
+                            Tailwind
+                        </div>
+                    </div>
+
+                    <div id="modal-preview"
+                        class="flex min-h-64 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-10">
+                    </div>
+                </section>
+
+                <section class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
+                    <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                        <div>
+                            <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-400">
+                                Tailwind HTML
+                            </div>
+                        </div>
+
+                        <button id="copy-code" type="button"
+                            class="rounded-lg bg-cyan-400 px-4 py-2 font-['DM_Mono'] text-[10px] font-medium uppercase tracking-[0.08em] text-slate-950 transition hover:bg-cyan-300 active:scale-95">
+                            Copy code
+                        </button>
+                    </div>
+
+                    <pre class="max-h-[420px] overflow-auto p-6"><code
+                    id="modal-code"
+                    class="font-['DM_Mono'] text-[12px] leading-7 text-slate-200"
+                ></code></pre>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
 
 </body>
 
