@@ -7,4 +7,6 @@ public sealed class Recipe
     public required string Preview { get; init; }
     public required string Code { get; init; }
     public required string Accent { get; init; }
+    public string? Css { get; init; }
+    public string? JavaScript { get; init; }
 }

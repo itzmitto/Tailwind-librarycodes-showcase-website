@@ -30,40 +30,65 @@
                     </h1>
 
                     <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-500">
-                        Reusable Tailwind CSS recipes for real frontend projects.
-                        Search, preview and copy exactly what you need.
+                        Reusable Tailwind recipes for real projects.
+                        Search, preview, favorite and copy the code you need.
                     </p>
                 </div>
 
-                <div class="min-w-[160px] rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5">
-                    <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                        Visible Recipes
+                <div class="grid grid-cols-2 gap-3">
+
+                    <div class="min-w-[150px] rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5">
+                        <div class="font-['DM_Mono'] text-[9px] uppercase tracking-[0.14em] text-slate-400">
+                            Visible
+                        </div>
+
+                        <div id="recipe-count" class="mt-2 text-3xl font-extrabold tracking-[-0.04em]">
+                            0
+                        </div>
                     </div>
 
-                    <div id="recipe-count" class="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-slate-950">
-                        0
+                    <div class="min-w-[150px] rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5">
+                        <div class="font-['DM_Mono'] text-[9px] uppercase tracking-[0.14em] text-slate-400">
+                            Favorites
+                        </div>
+
+                        <div id="favorite-count"
+                            class="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-emerald-500">
+                            0
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <section class="border-b border-slate-200 py-8">
-            <div class="flex flex-col gap-5">
+
+            <div class="grid grid-cols-[minmax(0,1fr)_220px] gap-3">
 
                 <div class="relative">
-                    <div
+                    <span
                         class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 font-['DM_Mono'] text-sm text-slate-400">
                         /
-                    </div>
+                    </span>
 
-                    <input id="recipe-search" type="search" placeholder="Search buttons, gradients, glass, loaders..."
+                    <input id="recipe-search" type="search" placeholder="Search buttons, glass, grids, loaders..."
                         autocomplete="off"
-                        class="w-full rounded-2xl border border-slate-200 bg-slate-50 py-4 pl-12 pr-5 text-sm font-medium text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100">
+                        class="w-full rounded-2xl border border-slate-200 bg-slate-50 py-4 pl-12 pr-5 text-sm font-medium outline-none transition placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100">
                 </div>
 
-                <div id="category-filters" class="flex flex-wrap gap-2"></div>
+                <select id="recipe-sort"
+                    class="rounded-2xl border border-slate-200 bg-slate-50 px-5 text-sm font-bold text-slate-600 outline-none transition focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-100">
+                    <option value="default">Default order</option>
+                    <option value="newest">Newest first</option>
+                    <option value="name">Name A–Z</option>
+                    <option value="category">Category A–Z</option>
+                </select>
 
             </div>
+
+            <div id="category-filters" class="mt-5 flex flex-wrap gap-2"></div>
+
         </section>
 
         <div id="recipe-sections"></div>
@@ -74,7 +99,7 @@
                 ?
             </div>
 
-            <h2 class="mt-6 text-2xl font-extrabold tracking-[-0.035em] text-slate-950">
+            <h2 class="mt-6 text-2xl font-extrabold tracking-[-0.035em]">
                 No recipes found
             </h2>
 
@@ -90,64 +115,86 @@
 
         <div
             class="relative z-10 max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-950/20">
+
             <div
                 class="sticky top-0 z-20 flex items-start justify-between gap-8 border-b border-slate-200 bg-white px-8 py-7">
+
                 <div>
                     <div id="modal-category"
                         class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.15em] text-cyan-500"></div>
 
-                    <h2 id="modal-title" class="mt-2 text-3xl font-extrabold tracking-[-0.045em] text-slate-950"></h2>
+                    <h2 id="modal-title" class="mt-2 text-3xl font-extrabold tracking-[-0.045em]"></h2>
 
                     <p id="modal-description" class="mt-3 max-w-2xl text-sm leading-6 text-slate-500"></p>
                 </div>
 
                 <button id="modal-close" type="button"
-                    class="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-xl text-slate-500 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
-                    aria-label="Close">
+                    class="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-xl text-slate-500 transition hover:bg-slate-50 hover:text-slate-950">
                     ×
                 </button>
+
             </div>
 
             <div class="grid gap-6 p-8">
 
                 <section>
+
                     <div class="mb-3 flex items-center justify-between">
+
                         <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-400">
                             Live Preview
                         </div>
 
-                        <div
+                        <span
                             class="rounded-full bg-emerald-50 px-3 py-1 font-['DM_Mono'] text-[9px] font-medium uppercase tracking-[0.1em] text-emerald-600">
                             Tailwind
-                        </div>
+                        </span>
+
                     </div>
 
                     <div id="modal-preview"
                         class="flex min-h-64 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-10">
                     </div>
+
                 </section>
 
                 <section class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
-                    <div class="flex items-center justify-between border-b border-white/10 px-5 py-4">
-                        <div>
-                            <div class="font-['DM_Mono'] text-[10px] uppercase tracking-[0.14em] text-slate-400">
-                                Tailwind HTML
-                            </div>
+
+                    <div class="flex items-center justify-between border-b border-white/10 px-4 py-3">
+
+                        <div id="code-tabs" class="flex items-center gap-1">
+                            <button type="button" data-code-tab="html"
+                                class="rounded-lg bg-white/10 px-4 py-2 font-['DM_Mono'] text-[9px] font-medium uppercase tracking-[0.1em] text-white">
+                                HTML
+                            </button>
+
+                            <button type="button" data-code-tab="css"
+                                class="hidden rounded-lg px-4 py-2 font-['DM_Mono'] text-[9px] font-medium uppercase tracking-[0.1em] text-slate-400 transition hover:bg-white/5 hover:text-white">
+                                CSS
+                            </button>
+
+                            <button type="button" data-code-tab="javascript"
+                                class="hidden rounded-lg px-4 py-2 font-['DM_Mono'] text-[9px] font-medium uppercase tracking-[0.1em] text-slate-400 transition hover:bg-white/5 hover:text-white">
+                                JavaScript
+                            </button>
                         </div>
 
                         <button id="copy-code" type="button"
-                            class="rounded-lg bg-cyan-400 px-4 py-2 font-['DM_Mono'] text-[10px] font-medium uppercase tracking-[0.08em] text-slate-950 transition hover:bg-cyan-300 active:scale-95">
+                            class="rounded-lg bg-cyan-400 px-4 py-2 font-['DM_Mono'] text-[9px] font-medium uppercase tracking-[0.08em] text-slate-950 transition hover:bg-cyan-300 active:scale-95">
                             Copy code
                         </button>
+
                     </div>
 
-                    <pre class="max-h-[420px] overflow-auto p-6"><code
+                    <pre class="max-h-[440px] overflow-auto p-6"><code
                     id="modal-code"
                     class="font-['DM_Mono'] text-[12px] leading-7 text-slate-200"
                 ></code></pre>
+
                 </section>
 
             </div>
+
         </div>
     </div>
 
